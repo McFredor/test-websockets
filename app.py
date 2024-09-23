@@ -2,8 +2,8 @@
 
 import asyncio
 import json
-import secrets
 import os
+import secrets
 import signal
 
 from websockets.asyncio.server import broadcast, serve
@@ -192,6 +192,7 @@ async def main():
     port = int(os.environ.get("PORT", "8001"))
     async with serve(handler, "", port):
         await stop
+
 
 if __name__ == "__main__":
     asyncio.run(main())
